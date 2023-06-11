@@ -1,0 +1,13 @@
+import numpy as np
+import matplotlib.pyplot as plt
+with open('python_read_serial.out') as f:
+	array = []
+	for line in f:
+		array.append([float(x) for x in line.split()])
+plot_array = np.asarray(array)		
+
+plt.plot(plot_array[:,0],plot_array[:,1],label="x")
+#plt.plot(plot_array[:,0],plot_array[:,2],label="y")
+plt.plot(plot_array[:,0],plot_array[:,3],label="z")
+plt.legend()
+plt.show()
